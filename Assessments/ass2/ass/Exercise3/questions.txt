@@ -1,0 +1,58 @@
+
+
+Question 1
+==========
+
+<Place an [X] for the correct answer
+
+Which of the following best describes the concept of deferred interrupts in a computing system?
+
+[ ] Interrupts that are delayed until the system has completed all running tasks.
+[ ] Interrupts that are handled immediately by the CPU, bypassing all priority levels.
+[X] A mechanism where the initial interrupt service routine (ISR) performs minimal work, deferring additional processing to a later time.
+[ ] A technique used to block all interrupts for a specific period to ensure critical code execution.
+
+
+Question 2
+==========
+<Place an [X] for the correct answer
+
+Which of the following best describes the purpose of file journaling in a filesystem?
+
+[ ] To improve the speed of file retrieval by indexing all file locations.
+[X] To maintain a log of changes to files and metadata, ensuring data integrity and recovery after a crash.
+[ ] To compress files on the disk to save storage space.
+[ ] To enable encryption of files for enhanced security.
+
+Question 3
+==========
+Consider a log-based filesystem initially empty. The files on disk are stored using datablock of 512 bytes, inodes of 512 bytes and finaly an i-node map of 4KB.
+The following operations are applied on disk:
+1. Store a new 4KB file
+2. Change the content of the first 10 bytes of the file
+3. Store a new 1KB file
+
+Draw the content of the filesystem (in terms of allocated space) after each operation highlightin valide and invalid blocks.
+
+
+Aswer:
+
+1) STORE A NEW 4KB file
+
+In the first step we allocate 8 blocks sequentially for the data of file1, after B8 we put an Inode that point to all previous Block from B1 to B8, at the end we put an Imap that point to the inode.
+
+B1 - B2 - B3 - B4 - B5 - B6 - B7 - B8 - Inode(point from B1 to B8 block) - Imap (poit to Inode) 
+
+
+2) CHANGE THE CONTENT OF THE FIRST 10B OF THE FILE
+
+In the second step we allocate, after the imap of the previous step, the new B1, then we allocate a new Inode that point to new B1 block and all previous blocks from B2 to B8. At the end we put a new Imap that will point to the new Inode.
+
+B1(not pointed) - B2 - B3 - B4 - B5 - B6 - B7 - B8 - Inode(not pointed by imap) - Imap (unused) - B1 updated - Inode (point to B1 updated and from B2 to B8) - Imap(point to new Inode)
+
+
+3) STORE A NEW 1KB FILE
+
+In the third step we allocate, after the imap of the previous step, the new B1 and B2 blocks of file 2 after that we will insert a new Inod that will point to the 2 previus blocks and at the end we put an imap that will point to the 2 valide inodes of 2 files
+
+B1(not pointed) - B2 - B3 - B4 - B5 - B6 - B7 - B8 - Inode(not pointed by imap) - Imap (unused) - B1 updated - Inode1 (point to B1 updated and from B2 to B8) - Imap(unused) - B1(file2) - B2(file2) - Inode2 (point to B1 and B2 of file2) - Imap (point to Inod1 and Inode2)
