@@ -1,0 +1,43 @@
+
+
+Question 1
+==========
+In a microprocessor can you explain how the latency of an instruction that requires three steps to be executed changes between an architecture with 3 pipeline stages and an architecture without pipeline?
+
+In a microprocessor the lantency is computed using the formula : L = N*t, the latency don't change based on pipeline or not. The parameter that change is the throughtput
+
+
+Question 2
+==========
+Can you shortly explain the difference between a spin-lock and a mutex?
+
+When we use a spinlock a process go into a infinite loop until the critical section become free. This solution waste some CPU cycles and is used when the critical section is small.
+When we use a mutex, instead, the process pass from running state to wait state, so we need the support of scheduler. This solution is used when the critical section is big and the execution of it is long.
+
+Question 3
+==========
+Shortly explain the role of a loader in an operating system.
+
+The loader is a process that take a program and upload it in a memory. So the program can become a process and when will be scheduled will be executed by the CPU.
+
+
+
+Question 4
+==========
+<Place an [X] for the correct answer>
+
+What is a microkernel?
+[ ] A high-level programming language used for developing microcontrollers.
+[ ] A type of kernel that includes all operating system services in a single monolithic module.
+[ ] A small computer used for educational purposes.
+[X] An operating system architecture that provides only essential services and runs them in kernel mode.
+
+Question 4
+==========
+<Place an [X] for the correct answer>
+
+What is priority inversion?
+[ ] A situation where a high-priority task completes its execution before a low-priority task.
+[X] A condition in which a low-priority task blocks a high-priority task due to a shared resource, causing a medium-priority task to delay the high-priority task.
+[ ] When all tasks run with the same priority level to avoid conflicts.
+[ ] A technique used in scheduling to improve task responsiveness.
