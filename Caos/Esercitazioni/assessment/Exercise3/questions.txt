@@ -1,0 +1,30 @@
+
+
+Question 1
+==========
+Can you explain the main difference between a spinlock and a semaphore?
+<Write here your answer>
+
+
+Question 2
+==========
+<Place an [X] for the correct answer>
+
+Which of the following statements is TRUE about memory-mapped I/O?
+
+[ ] The CPU requires special instructions to communicate with memory-mapped devices.
+[ ] Memory-mapped I/O allows devices and regular memory to share the same address space.
+[ ] Memory-mapped I/O eliminates the need for an address bus.
+[ ] The primary advantage of memory-mapped I/O is that it provides higher transfer speeds than DMA.
+
+
+Question 3
+==========
+Consider a filesystem based on i-nodes. Every data block on disk can store 512b. The i-node structure has two levels of hierarchy. The first-level inode contains ten 32-bit pointers to data blocks and ten 32-bit pointers to second-level i-nodes. Each second-level i-node contains 10 32-bit pointers to data blocks.
+
+The system must store a 12 KB file on disk. Compute:
+* The number of data blocks required on disk
+* The number of first-level and second-level i-nodes required to index the data blocks
+* The total occupation of the i-nodes in bytes
+
+<Write here your answer>
