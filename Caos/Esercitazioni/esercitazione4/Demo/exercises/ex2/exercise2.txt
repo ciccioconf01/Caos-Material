@@ -1,0 +1,29 @@
+Exercise 2: Smart Watering System (Queue and Message Passing)
+Scenario
+
+A smart irrigation system manages the watering of plants based on soil moisture levels and time of day. The system consists of the following components:
+
+    Soil Moisture Sensor
+        Monitors the moisture level of the soil and sends data to a queue.
+        Each reading includes the moisture level, time of reading, and sensor ID.
+
+    Water Pump Controller
+        Receives soil moisture data from the queue and controls the watering system.
+        If the soil is too dry, it activates the water pump to water the plants.
+
+    Weather Forecast System
+        Monitors the weather forecast (e.g., predicts rain) and sends warnings to the watering system.
+        If rain is predicted, the system prevents unnecessary watering.
+
+    Logger System
+        Logs the soil moisture readings, watering actions, and any weather-related alerts.
+
+Requirements
+
+    Soil Moisture Data Queue Use a FreeRTOS queue to simulate incoming soil moisture data. Ensure proper communication between the sensor, pump controller, and weather system.
+
+    Message Passing Use message passing to allow communication between the weather forecast system and the watering system (e.g., prevent watering if rain is predicted).
+
+    Synchronization Use synchronization mechanisms like semaphores to ensure tasks are properly coordinated. Ensure that the watering system does not operate while the weather system is still processing.
+
+    Fault Handling Handle conditions where the moisture sensor detects extreme values (e.g., faulty sensors) or where the queue is full/empty.

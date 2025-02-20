@@ -1,0 +1,6 @@
+Nuovo Obiettivo dell'esercizio:
+
+    Utilizzare un interrupt per generare un evento con un dato tipo (ad esempio un valore di temperatura o un evento di allarme).
+    L'evento viene inviato tramite una coda a un task di gestione che lo elabora.
+    Un altro task logger stampa lo stato del sistema ogni secondo, usando un semaforo per sincronizzare l'accesso alle risorse condivise.
+    I task devono gestire eventi di tipo diverso (ad esempio allarme e informazione normale), utilizzando una struttura per rappresentare l'evento e implementare una logica diversa a seconda del tipo di evento.

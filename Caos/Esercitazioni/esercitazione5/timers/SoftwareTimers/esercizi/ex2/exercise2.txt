@@ -1,0 +1,11 @@
+Obiettivo dell'esercizio:
+
+    Utilizzare un timer periodico che invia un messaggio ogni 3 secondi tramite una coda.
+    Un altro task riceve i messaggi dalla coda e li stampa ogni volta che ne riceve uno.
+    Dimostrare l'uso della sincronizzazione tra task e la gestione dei timer periodici.
+
+Cosa fare:
+
+    Creare una coda per comunicare tra i task.
+    Creare un timer periodico che invia messaggi alla coda ogni 3 secondi.
+    Creare un altro task che riceve i messaggi dalla coda e li stampa.

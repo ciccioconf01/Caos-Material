@@ -1,0 +1,73 @@
+Exercise 2: Smart Traffic Management System (Queue and Message Passing)
+Scenario
+
+A smart city traffic management system is responsible for controlling traffic lights, managing vehicle flow, and monitoring traffic congestion. The system consists of the following components:
+
+    Vehicle Detection System (VDS)
+        Detects vehicles approaching traffic lights and places the vehicle data into a queue.
+        Each vehicle's entry includes information such as vehicle type, priority, and approach time.
+
+    Traffic Light Controller
+        Controls the traffic lights based on vehicle flow and detected congestion.
+        Uses the vehicle queue to adjust the timing of traffic lights and prioritize certain vehicles (e.g., emergency vehicles).
+
+    Congestion Monitor
+        Monitors the traffic flow and detects congestion based on the vehicle queue and timing.
+        Sends messages to the traffic light controller to adjust signal timing if congestion is detected.
+
+    Logger System
+        Logs the status of each vehicle detection, traffic light change, and congestion alert.
+
+Requirements
+
+    Vehicle Detection Queue
+    Use a FreeRTOS queue to simulate the detection of incoming vehicles approaching traffic lights.
+    Ensure proper communication between the vehicle detection system, traffic light controller, and congestion monitor.
+
+    Message Passing
+    Use message passing via queues to simulate communication between the traffic light controller and the congestion monitor.
+
+    Synchronization
+    Use synchronization mechanisms like semaphores to ensure that tasks operate in a coordinated manner.
+    For example, ensure that the vehicle queue is properly processed before the traffic light changes.
+
+    Fault Handling
+    Implement checks to handle the following conditions:
+        Queue becoming full (if no new vehicles can be added).
+        Empty queue condition (no vehicles detected but the system still attempts to change lights).
+        Traffic light misconfiguration or congestion detection failures.
+
+Hints for Implementation
+
+    Vehicle Queue
+    Use a queue to simulate incoming vehicle data. Each vehicle can be represented by a structure containing:
+        Vehicle ID
+        Vehicle Type (e.g., car, truck, bus)
+        Approach Time (time the vehicle is detected)
+        Priority (e.g., emergency vehicles have higher priority)
+
+    Traffic Light Control Messages
+    Use another queue for message passing between the congestion monitor and the traffic light controller. Each message might include:
+        Light ID (identifying which traffic light to adjust)
+        Action (e.g., switch to green, extend red)
+        Priority Adjustment (e.g., give priority to an emergency vehicle)
+
+    Vehicle Detection System
+    The vehicle detection system (VDS) adds vehicles to the queue as they are detected. It waits for a vehicle to be detected before pushing it onto the queue. It should manage cases where the queue becomes full (i.e., too many vehicles detected at once).
+
+    Traffic Light Controller
+    The traffic light controller consumes vehicles from the queue, and based on vehicle type and priority, decides how to manage the traffic lights.
+    The controller must handle cases where the queue is empty but the system needs to proceed with regular operations (e.g., cycling lights based on time).
+
+    Congestion Monitor
+    The congestion monitor continuously observes the queue and the traffic lights to determine if congestion occurs. If congestion is detected, it sends a message to the traffic light controller to adjust signal timing (e.g., extend green for busy lanes or prioritize emergency vehicles).
+
+    Logger System
+    A dedicated task runs at a low priority and logs events such as:
+        Vehicle detection and entry into the queue.
+        Traffic light state changes (e.g., from red to green).
+        Alerts from the congestion monitor.
+        Any system faults or unexpected behavior.
+
+    Error Handling
+    Implement mechanisms to handle fault conditions like queue overflow (e.g., when vehicle detection exceeds the system’s capacity) and underflow (e.g., attempting to process when there are no vehicles in the queue).

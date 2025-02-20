@@ -1,0 +1,31 @@
+Exercise 3: Home Automation System (Queue and Message Passing)
+Scenario
+
+A home automation system controls lights, HVAC (heating, ventilation, and air conditioning), and security based on user commands, time of day, and environmental factors. The system consists of the following components:
+
+    User Command Interface
+        Receives user commands and sends them to a queue.
+        Commands can include "turn on light", "set temperature", and "lock doors".
+
+    HVAC Controller
+        Receives temperature settings from the user and adjusts the home HVAC system to maintain the desired temperature.
+
+    Lighting System
+        Controls the lights based on time of day and user commands.
+        The system turns off lights during the night or when the user requests it.
+
+    Security System
+        Monitors the house's security status and locks doors when triggered by the user or sensors.
+
+    Logger System
+        Logs actions performed by the home automation system, such as temperature changes, lights being turned on/off, and door locks.
+
+Requirements
+
+    Command Queue Use a FreeRTOS queue to simulate user input commands. Ensure that the lighting system, HVAC controller, and security system properly read commands from the queue.
+
+    Message Passing Use message passing to enable communication between the components, like notifying the lighting system when the house is in "night mode" (all lights should be off).
+
+    Synchronization Use semaphores or other synchronization mechanisms to ensure tasks like HVAC adjustments or lighting changes are done sequentially and do not interfere with each other.
+
+    Fault Handling Handle edge cases like invalid commands (e.g., temperature settings outside of the allowable range) or system errors (e.g., security breach alerts).

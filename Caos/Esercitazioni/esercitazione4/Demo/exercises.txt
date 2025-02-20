@@ -1,0 +1,61 @@
+
+
+Exercise 5: Smart Waste Management System (Queue and Message Passing)
+Scenario
+
+A smart waste management system automates the collection and processing of waste in a city. The system consists of the following components:
+
+    Waste Collection Sensor
+        Detects the level of waste in various bins and sends the data to a queue.
+        Includes bin ID, waste level, and location of the bin.
+
+    Truck Dispatcher
+        Receives data from the waste collection sensor and schedules a truck to collect the waste when the bins are full.
+        The dispatcher decides the route based on the waste levels and bin locations.
+
+    Waste Processing System
+        Receives data from the truck dispatcher indicating which bins have been collected.
+        Processes the collected waste and updates the system with the completion status.
+
+    Logger System
+        Logs the data from the waste collection sensor, the truck dispatcher, and the waste processing system for analysis.
+
+Requirements
+
+    Waste Data Queue Use a FreeRTOS queue to simulate the data coming from the waste collection sensor (bin levels and locations). Ensure communication between the sensor, dispatcher, and waste processing system.
+
+    Message Passing Use message passing to simulate the communication from the dispatcher to the waste processing system about the completion of waste collection.
+
+    Synchronization Use semaphores or mutexes to ensure that tasks like waste collection or waste processing are handled properly, with no interference between them.
+
+    Fault Handling Implement fault handling in case the waste level sensor detects abnormal readings (e.g., malfunctioning sensors) or if the truck dispatcher fails to schedule a truck due to route conflicts.
+
+Exercise 6: Smart Parking System (Queue and Message Passing)
+Scenario
+
+A smart parking system helps users find available parking spots and allows them to pay for parking through an app. The system consists of the following components:
+
+    Parking Spot Sensor
+        Monitors the availability of parking spots and sends updates to a queue.
+        The sensor data includes the spot ID, status (occupied or available), and the time of update.
+
+    Parking Reservation System
+        Receives parking spot availability data and allows users to reserve spots.
+        The system checks for available spots and assigns them to users based on the incoming reservation requests.
+
+    Payment System
+        Tracks users’ parking duration and processes payments once the user exits the parking lot.
+        Sends payment status messages to the parking reservation system.
+
+    Logger System
+        Logs reservation data, payment transactions, and parking spot status updates for future analysis.
+
+Requirements
+
+    Parking Spot Data Queue Use a FreeRTOS queue to simulate updates about the availability of parking spots (from the parking sensor).
+
+    Message Passing Use message passing to allow communication between the parking reservation system and payment system (e.g., sending payment status).
+
+    Synchronization Use synchronization mechanisms to manage concurrent parking spot reservations and payments.
+
+    Fault Handling Implement checks to handle errors like over-reservation of spots or failure to process a payment.

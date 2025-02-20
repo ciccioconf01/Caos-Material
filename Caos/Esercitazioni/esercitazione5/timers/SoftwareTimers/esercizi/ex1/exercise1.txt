@@ -1,0 +1,8 @@
+Obiettivo:
+
+Utilizzare un timer in FreeRTOS per eseguire una funzione ogni 2 secondi. La funzione dovrà incrementare un contatore e stampare il valore del contatore tramite una funzione di debug (ad esempio, su un terminale seriale).
+Passaggi:
+
+    Creare un timer periodico che scatti ogni 2 secondi.
+    Implementare una funzione callback che incrementi un contatore e stampi il suo valore.
+    Creare un task che faccia partire il timer e lo mantenga in esecuzione.

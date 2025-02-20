@@ -1,0 +1,27 @@
+Esercizio: Sistema di elaborazione multi-task con comunicazione tramite code
+
+Scenario:
+Un sistema di elaborazione dati utilizza tre task che cooperano per gestire eventi in tempo reale. Gli eventi sono generati da un sensore (simulato) e devono essere processati e registrati. La comunicazione tra i task avviene utilizzando due code: una per trasferire gli eventi dal generatore al processore e un'altra per inviare i risultati elaborati al registratore.
+Specifiche:
+
+    Task 1: Generatore di eventi (produttore) - (implementato con deferred interrupt)
+        Simula un sensore che genera eventi di due tipi:
+            Tipo 1: Lettura di un dato numerico (ad esempio, temperatura tra 20°C e 35°C).
+            Tipo 2: Segnalazione di un allarme (ad esempio, temperatura fuori dai limiti).
+        Gli eventi generati vengono inseriti nella coda degli eventi.
+
+    Task 2: Processore di eventi
+        Legge gli eventi dalla coda degli eventi e li elabora:
+            Tipo 1: Aggiunge il dato numerico a una somma totale per calcolare una media.
+            Tipo 2: Registra l’allarme e prepara un messaggio di risposta.
+        Inserisce i risultati elaborati nella coda dei risultati.
+
+    Task 3: Registratore
+        Legge i risultati dalla coda dei risultati e li registra (simulato tramite stampa a console).
+        Ogni 5 secondi, stampa un report riepilogativo che include:
+            Media dei dati numerici elaborati.
+            Numero di allarmi registrati.
+
+    Code di comunicazione:
+        Coda degli eventi: Utilizzata dal generatore per inviare gli eventi al processore.
+        Coda dei risultati: Utilizzata dal processore per inviare i risultati elaborati al registratore.
