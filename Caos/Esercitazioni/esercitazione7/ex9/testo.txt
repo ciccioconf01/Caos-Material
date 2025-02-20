@@ -1,0 +1,4 @@
+riceve in input due stringhe 
+poi passando un vettore di int di 2 elementi prendi le vet[0] lettere di stringa1 e concatenale con le vet[1] lettere di stringa2
+
+stampa in exit

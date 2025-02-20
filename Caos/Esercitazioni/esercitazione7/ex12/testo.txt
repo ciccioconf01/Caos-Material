@@ -1,0 +1,8 @@
+Esercizio 2: Device che simula una lista di numeri
+
+Scrivi un driver per un dispositivo Linux che simula l'interazione con un dispositivo di tipo lista di numeri. Ogni volta che il driver riceve una scrittura, memorizza i numeri ricevuti in una lista interna (kernel space). Ogni volta che viene effettuata una lettura, restituisce la lista dei numeri salvati. La lista viene azzerata ogni volta che viene letta, quindi la lettura deve "svuotare" la lista nel kernel.
+Requisiti:
+
+    Write Function: Modifica la funzione di scrittura per prendere una stringa numerica (separata da spazi) come input. Ogni numero deve essere aggiunto alla lista dei numeri nel kernel. Se non vengono passati numeri, stampa un messaggio di avviso.
+
+    Read Function: Modifica la funzione di lettura per restituire la lista dei numeri memorizzati nel kernel. Dopo aver letto la lista, la funzione deve azzerare la lista, in modo che la lettura successiva non restituisca più gli stessi numeri.

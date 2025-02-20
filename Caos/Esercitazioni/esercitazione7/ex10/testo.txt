@@ -1,0 +1,13 @@
+Objective:
+
+Write a Linux device driver for controlling the blinking rate of an LED on your system. The device will expose a character device interface that allows the user to set the blink interval for the LED.
+Requirements:
+
+    Device Initialization and Cleanup:
+        Create a device that can be opened, read, written to, and closed by the user-space program.
+        When the driver is loaded, initialize an LED control (or simulate an LED blink if you don't have access to hardware).
+        When the driver is removed, clean up and stop the blinking.
+
+    Reading and Writing to the Device:
+        Write: The user should be able to set the blink interval (in milliseconds) by writing to the device. If no input is given, print a warning message, and set the default blink interval to 1000ms.
+        Read: The user can read the current blink interval. The kernel will send back the value as a string in milliseconds (e.g., "1000ms").
