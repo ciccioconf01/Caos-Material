@@ -1,0 +1,10 @@
+Exercise 4: Simple Arithmetic in Kernel Space
+
+Objective: Create a kernel module that performs simple arithmetic (e.g., addition, subtraction) on two integers provided via the command line.
+
+Requirements:
+
+    Use module_param() to define two integers as command-line parameters (num1 and num2).
+    Perform a chosen arithmetic operation (addition or subtraction).
+    Print the result to the kernel log when the module is loaded.
+    Create a Makefile to compile the kernel module.

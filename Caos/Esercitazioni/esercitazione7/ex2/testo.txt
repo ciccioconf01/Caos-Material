@@ -1,0 +1,8 @@
+Scrivi un modulo del kernel che prende come input un parametro numerico tramite la riga di comando (ad esempio, int delay) e usa questo parametro per determinare il ritardo tra le iterazioni di un ciclo. Il modulo deve eseguire un ciclo che stampa un messaggio nel log del kernel ogni volta che il ciclo si ripete, e deve sospendere l'esecuzione per il numero di millisecondi specificato dal parametro delay.
+
+Requisiti:
+
+    Il modulo deve leggere un parametro numerico delay dalla riga di comando.
+    Il modulo deve eseguire un ciclo che stampa un messaggio nel log del kernel, ritardando ogni volta per il numero di millisecondi specificato dal parametro delay.
+    Il ciclo deve interrompersi dopo un numero prefissato di iterazioni (ad esempio, 10).
+    Usa msleep() per introdurre il ritardo.

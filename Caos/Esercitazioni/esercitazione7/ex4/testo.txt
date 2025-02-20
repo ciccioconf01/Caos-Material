@@ -1,0 +1,11 @@
+Exercise 2: Simple Counter
+
+Objective: Create a kernel module that increments a counter every second and prints the updated counter value to the kernel log each time it updates.
+
+Requirements:
+
+    Use init_module and cleanup_module functions.
+    Use the msleep() function to delay for 1 second between each increment.
+    Print the value of the counter to the kernel log with pr_info().
+    Create a variable that can be set via the command line to change the counter increment value (e.g., an integer step).
+    Create a Makefile to compile the module.

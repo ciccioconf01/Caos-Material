@@ -1,0 +1,10 @@
+Esercizio 1: Modulo che gestisce un parametro (Difficoltà: Media)
+
+Obiettivo: Creare un modulo che accetta un parametro al momento del caricamento e lo visualizza.
+
+Passi:
+
+    Crea un file chiamato modulo_parametro.c.
+    Scrivi il codice per un modulo che accetta un parametro (ad esempio, un intero) e lo visualizza durante il caricamento.
+    Compila e carica il modulo, passando il parametro al momento del caricamento.
+    Verifica che il valore del parametro venga stampato nei log di sistema.

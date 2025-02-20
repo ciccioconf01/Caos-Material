@@ -1,0 +1,11 @@
+Esercizio 2: Gestione di un array di strutture
+
+Scrivi un modulo del kernel che accetta come input un array di strutture attraverso la riga di comando. Ogni struttura deve contenere un intero e una stringa, e il modulo deve stampare il contenuto dell'array nel log del kernel quando il modulo viene caricato. Quando il modulo viene rimosso, deve sommare tutti gli interi contenuti nell'array e stampare il risultato.
+
+Requisiti:
+
+    Crea una struttura con almeno due membri: un intero e una stringa.
+    Leggi un array di strutture dal comando della riga di comando e stampa ciascun elemento dell'array nel log del kernel.
+    Al momento dello scarico del modulo, somma tutti gli interi presenti nell'array e stampa il risultato nel log del kernel.
+    Usa il GPL come licenza del modulo.
+    Fornisci un Makefile che compili il modulo.

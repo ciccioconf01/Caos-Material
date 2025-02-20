@@ -1,0 +1,1 @@
+serie di fibonacci nella init dato un parametro da tastiera

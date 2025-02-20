@@ -1,0 +1,23 @@
+Esercizio: Calcolo del prodotto degli elementi di un array (interazione tramite programma utente)
+
+Descrizione: Scrivi un driver Linux che simula l'interazione con un dispositivo, eseguendo il calcolo del prodotto degli elementi di un array. Il programma utente dovrà comunicare con il dispositivo utilizzando le funzioni open, write, read e close.
+
+Requisiti:
+
+    Funzione write del driver:
+        Prendi un array di numeri interi in input dall'utente.
+        Copia i dati nello spazio del kernel e calcola il prodotto degli elementi dell'array.
+        Se non vengono passati dati, stampa un messaggio di avviso.
+
+    Funzione read del driver:
+        Copia il risultato del calcolo del prodotto nello spazio utente in modo che l'utente possa leggere il risultato.
+
+    Programma utente:
+        Crea un programma utente che interagisce con il driver utilizzando le funzioni di sistema standard open, close, read e write per comunicare con il dispositivo.
+
+    Compilazione:
+        Compila il codice del driver e il programma utente. Usa due eseguibili separati per l'esecuzione del programma utente.
+
+    Funzione open con try_module_get:
+        Modifica la funzione open in modo da acquisire il modulo due volte con try_module_get. La funzione release dovrà essere lasciata invariata.
+        Cosa succede se provi a rimuovere il modulo (rmmod) dopo averlo utilizzato con il programma utente?

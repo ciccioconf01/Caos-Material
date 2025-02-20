@@ -1,0 +1,10 @@
+Exercise 5: String Length and Manipulation
+
+Objective: Write a kernel module that accepts a string as an input parameter via the command line and calculates the length of the string, printing it to the kernel log.
+
+Requirements:
+
+    Use module_param() to accept a string from the command line.
+    Use the strlen() function to calculate the string length.
+    Print the string length to the kernel log.
+    Create a Makefile to compile the kernel module.
